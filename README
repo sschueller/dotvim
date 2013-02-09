@@ -12,3 +12,21 @@ Switch to the `~/.vim` directory, and fetch submodules:
     cd ~/.vim
     git submodule init
     git submodule update
+
+
+sudo aptitude install ruby1.9.1-dev ruby1.8-dev libncurses-dev
+
+cd /usr/local/src
+sudo su
+wget ftp://ftp.vim.org/pub/vim/unix/vim-7.3.tar.bz2
+tar jxf vim-7.3.tar.bz2
+cd vim73/
+./configure --with-features=huge --enable-gui=gnome2 --enable-rubyinterp --enable-pythoninterp
+make
+make install
+
+cd ~/.vim/bundle/command-t/ruby/command-t
+ruby extconf.rb
+make  
+
+:call pathogen#helptags()
